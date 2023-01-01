@@ -56,7 +56,14 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-  throw new Error('Not implemented');
+  const p = JSON.parse(json);
+  const arr = Object.keys(p);
+  const res = arr.reduce((prev, next) => {
+    const key = {};
+    key[next] = p[next];
+    return Object.assign(prev, key);
+  }, {});
+  return Object.setPrototypeOf(res, proto);
 }
 
 
