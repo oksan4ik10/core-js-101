@@ -501,7 +501,6 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  const res;
   return position;
 }
 
